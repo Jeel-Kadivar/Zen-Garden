@@ -1,0 +1,538 @@
+/* CSS START */
+/* font declaration */
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,500;1,500&display=swap');
+
+
+/* IDEA
+
+At first I was thinking about something simple but later it was not upto my liking.
+So I changed the idea to something like superhero comicbook theme which gives the feel of that so keeping
+that in mind I have designed my css. Please do have a look. Thank You!!
+
+*/
+
+
+/* Table Of Content Start 
+
+1. CSS reset
+2. root variables for color and fonts
+3. wrapper
+4. grid for content organization
+5. css for header
+6. css for all the body content
+7. footer also with grid arrangement
+8. css for footer
+ 
+Table Of Content End */
+
+
+/* CSS RESET START */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* CSS RESET END */
+
+
+/* font variables */
+:root {
+    --font1: "Montserrat", sans-serif;
+    --font2: "Raleway", sans-serif;
+    --font3: "Karla", sans-serif;
+}
+
+/* root variable */
+:root {
+    --color1: #e1c564;
+    --color2: #000000;
+    --color3: #FFFFFF;
+}
+
+/* background css for webpage */
+.page-wrapper {
+    background-image: url("https://pixabay.com/get/g282ebe9461132964c886e0bcdfd26375cd97f3bf69d2c01cb741c3143cdf89f68b9056db344be5f66c91d5ec7f08109c.png");
+    min-height: 100px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+/* grid for content organization */
+#zen-supporting {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto, auto, auto, auto, auto;
+    grid-template-areas: "e e r r"
+        "p p r r"
+        "p p r r"
+        "b b b b"
+        "f f f f";
+}
+
+/* declaring grid */
+.explanation {
+    grid-area: e;
+}
+
+.participation {
+    grid-area: p;
+}
+
+.benefits {
+    grid-area: b;
+}
+
+.requirements {
+    grid-area: r;
+}
+
+footer {
+    grid-area: f;
+}
+
+/* css for banner or header */
+[role=banner] {
+    background-image: url("https://pixabay.com/get/g61c4c8bb3867c919bb93b0a1d024438d678eea85e8126eab4ec012fcbc91fc4538c0d7d52d2b3f525955b897ce1b3949.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 5%;
+    font-family: var(--font1);
+    text-align: center;
+    color: white;
+    transition: 1s ease;
+}
+
+[role=banner] h1 {
+    padding: 20px;
+    font-size: 80px;
+}
+
+[role=banner] h2 {
+    padding: 20px;
+    font-size: 80px;
+}
+/* banner hover css with bg scale */
+[role=banner]:hover{
+    background-size: 15%;
+    box-shadow: 0 4px 8px 0 var(--color1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* summary css */
+.summary {
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--color1);
+    padding: 10px;
+    text-align: center;
+    color: white;
+    font-family: var(--font2);
+    margin: 20px;
+}
+
+/* specific css for 2 child p  */
+.summary p:nth-child(2) {
+    padding: 15px;
+}
+
+.summary a {
+    text-decoration: none;
+    color: white;
+}
+
+/* CONTENT CSS START */
+/* premable main bg style */
+.preamble {
+    margin: 20px;
+    background-color: rgba(0, 0, 0, 0.534);
+    width: fit-content;
+    background-image: url("https://cdn.pixabay.com/photo/2016/08/17/22/22/kapow-1601675_1280.png");
+    background-repeat: no-repeat;
+    height: 25em;
+    box-shadow: inset 6px 6px 10px 0 var(--color1), inset -6px -6px 10px 0 var(--color1);
+    color: white;
+    padding: 20px;
+    transition: 2s ease;
+}
+
+/* premable h3 style */
+.preamble h3 {
+    text-decoration: underline var(--color1);
+    font-size: 45px;
+    font-family: var(--font3);
+}
+
+/* premable p style */
+.preamble p {
+    font-family: var(--font1);
+    margin: 20px;
+    font-size: 20px;
+}
+/* preamble hover css with bg position */
+.preamble:hover {
+    background-position: 0% -30%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* explanation main bg style */
+.explanation {
+    margin: 20px;
+    background-color: rgba(0, 0, 0, 0.534);
+    width: fit-content;
+    background-repeat: no-repeat;
+    height: 25em;
+    box-shadow: inset 6px 6px 10px 0 var(--color1), inset -6px -6px 10px 0 var(--color1);
+    color: white;
+    padding: 20px;
+    transition: 2s ease;
+}
+
+/* explanation h3 style */
+.explanation h3 {
+    text-decoration: underline var(--color1);
+    font-size: 45px;
+    font-family: var(--font3);
+}
+
+/* explanation p style */
+.explanation p {
+    font-family: var(--font1);
+    margin: 20px;
+    font-size: 20px;
+}
+
+/* explanation bg hover */
+.explanation:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* participation main bg style */
+.participation {
+    margin: 20px;
+    background-color: rgba(0, 0, 0, 0.534);
+    width: fit-content;
+    background-image: url("https://cdn.pixabay.com/photo/2016/08/17/22/22/kapow-1601675_1280.png");
+    background-repeat: no-repeat;
+    height: 40em;
+    box-shadow: inset 6px 6px 10px 0 var(--color1), inset -6px -6px 10px 0 var(--color1);
+    color: white;
+    padding: 20px;
+    transition: 2s ease;
+}
+
+/* participation h3 style */
+.participation h3 {
+    text-decoration: underline var(--color1);
+    font-size: 45px;
+    font-family: var(--font3);
+}
+
+/* participation p style */
+.participation p {
+    font-family: var(--font1);
+    margin: 20px;
+    font-size: 20px;
+}
+
+/* participation hover css with bg position */
+.participation:hover {
+    background-position: 0% -100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* requirements main bg style */
+.requirements {
+    background-image: url("https://cdn.pixabay.com/photo/2016/08/17/22/22/kapow-1601675_1280.png");
+    background-repeat: no-repeat;
+    background-position: 0% 600%;
+    margin: 20px;
+    background-color: rgba(0, 0, 0, 0.534);
+    width: fit-content;
+    height: auto;
+    box-shadow: inset 6px 6px 10px 0 var(--color1), inset -6px -6px 10px 0 var(--color1);
+    color: white;
+    padding: 20px;
+    transition: 2s ease;
+}
+
+/* requirements h3 style */
+.requirements h3 {
+    text-decoration: underline var(--color1);
+    font-size: 45px;
+    font-family: var(--font3);
+}
+
+/* requirements p style */
+.requirements p {
+    font-family: var(--font1);
+    margin: 20px;
+    font-size: 20px;
+}
+
+/* requirements hover css with hidden bg */
+.requirements:hover {
+    background-image: url("https://cdn.pixabay.com/photo/2016/08/17/22/22/kapow-1601675_1280.png");
+    background-repeat: no-repeat;
+    background-position: 0% 200%;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: 2s ease-in-out;
+}
+
+/* benefits main bg style */
+.benefits {
+    background-image: url("https://cdn.pixabay.com/photo/2016/08/17/22/22/kapow-1601675_1280.png");
+    background-repeat: no-repeat;
+    background-position: 50% 190%; 
+    margin: 20px;
+    background-color: rgba(0, 0, 0, 0.534);
+    width: fit-content;
+    height: 25em;
+    box-shadow: inset 6px 6px 10px 0 var(--color1), inset -6px -6px 10px 0 var(--color1);
+    color: white;
+    padding: 20px;
+    transition: 2s ease;
+}
+
+/* benifits h3 style */
+.benefits h3 {
+    text-decoration: underline var(--color1);
+    font-size: 45px;
+    font-family: var(--font3);
+}
+
+/* benifits p style */
+.benefits p {
+    font-family: var(--font1);
+    margin: 20px;
+    font-size: 20px;
+}
+
+/* benifits bg hover css */
+.benefits:hover {
+    background-position: 110% -10%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Content default link color remove decoration css  */
+#zen-supporting a {
+    text-decoration: none;
+    color: white;
+}
+
+/* CONTENT CSS END */
+/* footer for content css */
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    height: 5em;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--color1);
+    padding: 10px;
+    color: white;
+    font-family: var(--font2);
+    margin: 20px;
+}
+
+footer a {
+    color: var(--color3);
+    text-decoration: none;
+}
+
+/* footer grid css for organizing */
+.wrapper {
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--color1);
+    padding: 10px;
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: "s a r";
+    background-image: url("https://cdn.pixabay.com/photo/2016/08/17/22/22/kapow-1601675_1280.png");
+    background-repeat: no-repeat;
+    background-position: 150% 60%;
+    transition: 2s ease-in-out;
+}
+
+/* footer grid declaration */
+.design-selection {
+    grid-area: s;
+}
+
+.design-archives {
+    grid-area: a;
+}
+
+.zen-resources {
+    grid-area: r;
+}
+
+.wrapper a {
+    text-decoration: none;
+    color: white;
+}
+
+/* footer h3 css */
+.wrapper h3 {
+    text-decoration: underline var(--color1);
+    font-family: var(--font2);
+    font-size: 30px;
+    margin: 10px;
+    padding: 5px;
+}
+
+/* footer list css */
+.wrapper li {
+    font-family: var(--font3);
+    margin: 10px;
+    padding: 5px;
+    border: 2px solid var(--color1);
+    width: fit-content;
+}
+
+.wrapper:hover {
+    background-position: 50% 60%;
+}
+
+/* CSS END */
